@@ -7,16 +7,15 @@
     <title>Document</title>
 </head>
 <body>
+    <a href="{% url 'task-list' %}">Go Back</a>
     <table>
         <tr>
             <th>Task</th>
         </tr>
-        {%for task in task_list%}
         <tr>
             <td>{{task.title}}</td>
-            <td><a href="{% url 'task-detail' task.id %}">View</a></td>
+            <td>{{task.description}}</td>
         </tr>
-        {% endfor %}
     </table>
 </body>
 </html>
