@@ -7,6 +7,8 @@
     <title>Document</title>
 </head>
 <body>
+    {{request.user}}
+    <hr>
     <a href="{% url 'task-create' %}">Add Task</a>
     <table>
         <tr>
@@ -16,6 +18,8 @@
         <tr>
             <td>{{task.title}}</td>
             <td><a href="{% url 'task-detail' task.id %}">View</a></td>
+            <td><a href="{% url 'task-update' task.id %}">Edit</a></td>
+            <td><a href="{% url 'task-delete' task.id %}">Delete</a></td>
         </tr>
         {% endfor %}
     </table>
