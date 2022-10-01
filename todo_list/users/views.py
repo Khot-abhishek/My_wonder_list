@@ -9,4 +9,7 @@ class UserLoginView(LoginView):
     template_name = 'users/login.html'
     redirect_authenticated_user = True
     success_url = reverse_lazy('task-list')
-    
+
+
+class UserLogoutView(LogoutView):
+    template_name = 'users/logout.html'    
