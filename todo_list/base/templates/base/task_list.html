@@ -17,18 +17,25 @@
 
     <hr>
     <a href="{% url 'task-create' %}">Add Task</a>
-    <table>
-        <tr>
-            <th>Task</th>
-        </tr>
-        {%for task in task_list%}
-        <tr>
-            <td>{{task.title}}</td>
-            <td><a href="{% url 'task-detail' task.id %}">View</a></td>
-            <td><a href="{% url 'task-update' task.id %}">Edit</a></td>
-            <td><a href="{% url 'task-delete' task.id %}">Delete</a></td>
-        </tr>
-        {% endfor %}
-    </table>
+
+    
+    {% if task_list %}
+        <table>
+            <tr>
+                <th>Task</th>
+            </tr>
+            {%for task in task_list%}
+            <tr>
+                <td>{{task.title}}</td>
+                <td><a href="{% url 'task-detail' task.id %}">View</a></td>
+                <td><a href="{% url 'task-update' task.id %}">Edit</a></td>
+                <td><a href="{% url 'task-delete' task.id %}">Delete</a></td>
+            </tr>
+            {% endfor %}
+        </table>
+    {% else %}
+        <h3>No task available , <br/> Please create New Tasks by Clicking on the 'Add Task button'</h3>
+    {% endif %}
+        
 </body>
 </html>
