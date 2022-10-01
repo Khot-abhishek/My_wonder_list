@@ -7,7 +7,14 @@
     <title>Document</title>
 </head>
 <body>
-    {{request.user}}
+    
+    {% if request.user.is_authenticated %}
+        {{request.user}}<br/>
+        <a href="">Logout</a>
+    {% else %}
+        <a href="{% url 'login' %}">Login</a>
+    {% endif %}
+
     <hr>
     <a href="{% url 'task-create' %}">Add Task</a>
     <table>

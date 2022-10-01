@@ -120,4 +120,10 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
+#__Authentication__Related
+LOGIN_REDIRECT_URL = 'task-list'
+# LOGIN_URL = 'task-list'
+
+
+
 STATIC_URL = '/static/'
